@@ -10,6 +10,11 @@ use App\Http\Controllers\API\RecommendationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+// Swagger documentation route
+Route::get('/documentation', function () {
+    return view('vendor.l5-swagger.index');
+});
+
 Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 
