@@ -6,6 +6,7 @@ use App\Http\Controllers\API\ClassroomController;
 use App\Http\Controllers\API\LessonController;
 use App\Http\Controllers\API\PingController;
 use App\Http\Controllers\API\ProgressController;
+use App\Http\Controllers\API\RecommendationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,7 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('progress/{userId}', [ProgressController::class, 'getByUser']);
     Route::post('attendance/checkin', [AttendanceController::class, 'checkin']);
     Route::get('attendance/{classroomId}/{userId}', [AttendanceController::class, 'getByClassroomAndUser']);
+    Route::get('recommendation/{userId}', [RecommendationController::class, 'getRecommendations']);
 });
 
 Route::get('/ping', [PingController::class, 'index']);
